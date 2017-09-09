@@ -3,25 +3,36 @@ package com.company;
 /**
  * Created by gcl713 on 2017/9/9.
  */
-interface A {
-    void print();
+class A{
+    public void fun1(){
+        System.out.println("A -->public void fun1(){}");
+    }
+    public void fun2(){
+        this.fun1();
+    }
 }
 
-abstract class AC{
-    public abstract void print();
-}
-
-class AS extends AC implements A{
-    public void print()
-    {
-        System.out.println("hello world");
+class B extends A{
+    public void fun1(){
+        System.out.println("B -->public void fun2() {}");
+    }
+    public void fun3(){
+        System.out.println("B-->fun3");
     }
 }
 
 public class AA{
-    public static void main(String args[])
+    /*public static void main(String[] args){
+        B bb=new B();                                  //子类实例化
+        A aa=bb;                                       //向上转型，子类-->父类
+        aa.fun1();                                     //被子类覆写的方法
+    }*/
+    public static void main(String[] args)
     {
-        AS as=new AS();
-        as.print();
+        A a=new B();                                   //向上转型
+        B b=(B)a;                                      //向下转型
+        b.fun1();
+        b.fun3();
+        b.fun2();
     }
 }
