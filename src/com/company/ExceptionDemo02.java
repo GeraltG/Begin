@@ -18,7 +18,14 @@ public class ExceptionDemo02 {
             System.out.println("----------------");
         }catch(ArithmeticException e)
         {
-            System.out.println(e);
+            System.out.println(e+"算数异常");
+        }
+        catch(NumberFormatException e){
+            System.out.println(e+"数字转换异常");
+        }
+        catch(ArrayIndexOutOfBoundsException e)
+        {
+            System.out.println(e+"数组越界异常");
         }
         System.out.println("*********************************");
     }
