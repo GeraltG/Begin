@@ -27,6 +27,6 @@ class Math{
 public class ThrowsDemo01{
     public static void main(String[] args) throws Exception{
         Math m=new Math();
-        System.out.println(m.div(10,0));
+        System.out.println(m.div(10,2));
     }
 }
